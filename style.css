@@ -1,0 +1,199 @@
+:root {
+    --clr-gradient-100: hsl(6, 100%, 80%); 
+    --clr-gradient-200: hsl(335, 100%, 65%);
+
+    --clr-100: hsl(243, 100%, 93%);
+    --clr-200: hsl(229, 7%, 55%);
+    --clr-300: hsl(228, 56%, 26%);
+    --clr-400: hsl(229, 57%, 11%);
+
+    --fw-regular: 400; 
+    --fw-bold: 700;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+}
+body {
+    font-size: .8125rem;
+    font-family: "Raleway", sans-serif;
+    
+    background-color: var(--clr-400);
+    background-image: url('images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 100vh;
+    place-content: center;
+     
+}
+.container {
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card {
+    background-color: var(--clr-300);
+    border-radius: .5rem;
+    padding: 2.5rem;
+}
+/* file */
+.file-section {
+    border-top-right-radius: 7rem;
+    display: grid;
+    gap: 2rem;
+}
+.icon {
+    display: flex;
+    gap: .8rem;
+}
+.icon > * {
+    background-color: var(--clr-400);
+    align-content: center;
+    text-align: center;
+    padding: .5rem;
+    width: 45px;
+    border-radius: .5rem;
+}
+/* storage */
+.storage-section {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.storage-section > p {
+    font-size: .9rem;
+    color: hsl(0, 0%, 100%, 60%); 
+    text-align: center;
+}
+.storage-section span {
+    color: hsl(0, 0%, 100%, 80%); 
+    font-weight: var(--fw-bold);
+}
+/* storage > bar */
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.bar {
+    background-color: var(--clr-400);
+    height: 20px;
+    max-width: 100%;
+    border-radius: 5rem;
+    overflow: hidden;
+    place-content: center;
+    padding-inline: .2rem;
+}
+.gradient {
+    background: linear-gradient(to right, var(--clr-gradient-100), var(--clr-gradient-200));
+    height: 15px;
+    max-width: 75%;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.dot {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: .16rem;
+}
+.bar-text {
+    display: flex;
+    justify-content: space-between;
+
+    color: hsl(0, 0%, 100%, 80%); 
+    font-weight: var(--fw-bold);
+}
+/* storage > gb box */
+.gb-section {
+    background-color: white;
+    color: var(--clr-400);
+    border-radius: .7rem;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.4rem;
+    font-weight: var(--fw-bold);
+
+    margin-bottom: -4.5rem;
+}
+.gb-text {
+    display: flex;
+    place-content: center;
+}
+.gb-text h1 {
+    font-size: 2.5rem;
+}
+.gb-text h2 {
+    text-transform: uppercase;
+    color: var(--clr-200);
+    letter-spacing: 1px;
+    font-size: .8rem;
+    align-self: center;
+    margin-left: .5rem;
+    margin-top: .2rem;
+}
+@media (min-width: 900px) {
+    body {
+        background-image: url('images/bg-desktop.png');
+        background-size: 100% 50%;
+        background-position: bottom;
+
+        width: 100%;
+    }
+    .container {
+        max-width: 925px;
+        padding: 1rem;
+
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    /* file */
+    .file-section {
+        width: 40%;
+    }
+    /* storage */
+    .storage-section {
+        position: relative;
+
+        width: 60%;
+        align-self: flex-end;
+    }
+    .storage-section > p {
+        text-align: left;
+    }
+    /* gb */
+    .gb-container {
+        position: absolute;
+        top: -30%;
+        left: 58%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .gb-section {
+        margin-bottom: unset;
+        border-bottom-right-radius: 0rem;
+    }
+    .triangle {        
+        width: 0;
+        height: 0;
+        border-left: 22px solid transparent; 
+        border-top: 22px solid white;
+    }
+}
